@@ -1,0 +1,52 @@
+:root {
+    --background-color: lightblue;
+    --font-color: black;
+}
+
+/* -------------------- Home Page -------------------- */
+
+/* ---------- Header ---------- */
+
+body {
+    margin: 0 auto;
+    font-size: 20px;
+    overflow: scroll;
+}
+
+nav {
+    background-color: var(--background-color);
+    height: 80px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+nav a {
+    font-size: 1em;
+    color: var(--font-color);
+    margin: 20px;
+}
+
+/* ---------- Main ---------- */
+
+h1 {
+    text-align: center;
+}
+
+main p {
+    margin: 20px 10%;
+    font-size: 1em;
+}
+
+/* ---------- Footer ---------- */
+
+
+@media (max-width: 900px)  {
+    nav {
+        flex-direction: column;
+        height: auto;
+    }
+    nav a {
+        margin: 10px auto;
+    }
+}
