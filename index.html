@@ -6,8 +6,10 @@
     <meta name="description" content="Website showing work done for the WDD 131 class at BYUI">
     <meta name="author" content="Alex Dombroski">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 Portfolio</title>
+
     <link rel="stylesheet" href="style.css">
-    <title>WDD 131 Home Page</title>
+    <script src="scripts/nav_dropdown.js" defer></script>
 </head>
 <body>
     <header>
@@ -16,11 +18,19 @@
             <a href="#">Cool Pics</a>
             <a href="#">Blog</a>
             <a href="#">Credit Card</a>
-            <a href="#">Regristration</a>
+            <a href="#">Registration</a>
             <a href="#">Recipe Book</a>
             <a href="#">Personal Site Plan</a>
             <a href="#">Personal Site</a>
+            <div id="ponder_dropdown">
+                <button onclick="togglePonder()">Ponder Activities</button>
+            </div>
         </nav>
+        <div id="ponder_links">
+            <a href="ponder-activities/running.html">1. Running</a>
+            <a href="#">2. Variables</a>
+            <a href="#">3. Debugging</a>
+        </div>
     </header>
     <main>
         <h1>Alex Dombroski: WDD 131 Portfolio</h1>
@@ -32,7 +42,7 @@
         </p>
     </main>
     <footer>
-
+        
     </footer>
 </body>
 </html>
