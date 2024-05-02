@@ -7,15 +7,20 @@
     <meta description="Replica of the BYUI mission statement for a school project">
     <title>Mission Statement</title>
     <link rel="stylesheet" href="mission.css">
+    <script src="display.js" defer></script>
 </head>
-<body>
+<body class="light">
     <div class="content">
         <header>
+            <select name="display-mode" id="display-selector">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+            </select>
             <h1>MISSION STATEMENT</h1>
             <h2>BRIGHAM YOUNG UNIVERSITY-IDAHO</h2>
             <hr>
         </header>
-        <main>   
+        <main>  
             <p>Brigham Young University-Idaho was founded and is supported and guided by The Church of Jesus Christ of Latter-day Saints. Its mission is to develop disciples of Jesus Christ who are leaders in their homes, the Church, and their communities.</p>
             <p class="italic">The university does this by:</p>
             <ol>
@@ -26,7 +31,7 @@
             </ol>
         </main>
         <footer>
-            <img src="byui-logo_blue.webp" alt="BYUI logo">
+            <img id="logo" src="byui-logo_blue.webp" alt="BYUI logo">
         </footer>
     </div>
 </body>
