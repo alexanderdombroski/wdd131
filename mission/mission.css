@@ -41,9 +41,13 @@ p, li {
 
 /* Dark Theme */
 
-.dark {
+.dark, .dark select {
     background-color: #333;
     color: white;
+}
+
+.dark .content {
+    border: solid 2px white;
 }
 
 .dark h2 {
