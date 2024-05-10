@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+
+:root {
+    --primary-color: #52489c;
+    --secondary-color: #59c3c3;
+    --accent-color: #f45b69;
+    --text-dark: #333;
+    --text-light: #ebebeb;
+    --primary-font: Arial, Helvetica, sans-serif;
+    --secondary-font: Mooli, san-serif;
+}
+
+body {
+    font-family: var(--primary-font);
+    font-size: 1.2em;
+    margin: 0;
+    text-align: center;
+}
+
+header h1 {
+    font-weight: 300;
+    font-family: var(--secondary-font);
+}
+
+nav {
+    color: var(--text-light);
+}
+
+a {
+    display: block;
+    line-height: 2rem;
+}
+
+a:link, a:visited {
+    color: var(--text-light)
+}
+
+/* ---------- Header ---------- */
+
+header, footer {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 20px;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.5em;
+}
+
+/* ---------- Main ---------- */
+
+main {
+    background-color: #ebebeb;
+    padding: 20px 0;
+}
+
+img {
+	max-width: 100%;
+    width: 300px; height: 300px;
+    object-fit: cover;
+}
+
+figure {
+    margin: 30px auto;
+    width: 300px; height: 300px;
+    overflow: hidden;
+    border: white solid 10px;
+    box-shadow: #333 8px 8px 6px;
+}
+
+.gallery {
+    display: block;
+}
+
+/* ---------- Footer ---------- */
+
+
+
+/* ---------- Mobile Design ---------- */
+
+@media screen and (min-width: 700px) {
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    button {
+        display: none;        
+    }
+    
+    .gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .gallery {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
