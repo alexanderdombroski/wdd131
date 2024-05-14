@@ -66,11 +66,11 @@ main {
     padding: 20px 0;
 }
 
-img, figure {
+figure > img, figure {
     width: 250px; height: 250px;
 }
 
-img {
+figure > img {
     object-fit: cover;
 }
 
@@ -85,13 +85,27 @@ figure {
     display: block;
 }
 
+.viewer {
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+.viewer * {
+    display: inline;
+    margin: 75px auto;
+    vertical-align: top;
+}
+.viewer img {
+    width: 85%;
+}
+
 /* ---------- Footer ---------- */
 
 footer p {
     margin-right: 30%;
 }
 
-/* ---------- Mobile Design ---------- */
+/* ---------- Desktop Changes ---------- */
 
 @media screen and (min-width: 700px) {
     nav {
@@ -108,10 +122,16 @@ footer p {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
+    .viewer img {
+        width: 60%;
+    }
 }
 
 @media screen and (min-width: 1000px) {
     .gallery {
         grid-template-columns: 1fr 1fr 1fr;
+    }
+    .viewer img {
+        width: 50%;
     }
 }
