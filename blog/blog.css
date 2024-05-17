@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+:root {
+    /* Colors */
+    --gold: #EFC69B;
+    --red: #AF1B3F;
+    --dark: #473144;
+    
+    /* Fonts */
+    --body-font: Helvetica, Arial, sans-serif;
+    --headline-font: "Lora", Impact, serif;
+}
+
+
+/* --------------- Header --------------- */
+
+body {
+    margin: 0;
+}
+
+
+
+
+
+
+
+/* --------------- Main --------------- */
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: end;
+}
+
+
+
+
+
+
+/* --------------- Footer --------------- */
