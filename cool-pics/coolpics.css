@@ -114,7 +114,7 @@ footer p {
         justify-content: space-around;
     }
 
-    button {
+    #menuButton {
         display: none;        
     }
     
