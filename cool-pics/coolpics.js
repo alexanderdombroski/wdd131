@@ -11,13 +11,13 @@ function toggleMenu() {
     nav.hidden = !nav.hidden;
 }
 
+
 function openViewer(event) {
     const viewer = document.querySelector(".viewer");
-    const src = event.target.src;
-    const imageName = `${src.slice(0, src.lastIndexOf('-'))}-full.jpeg`
+    const imageName = event.target.getAttribute("src").split('-')[0];
     const image = viewer.querySelector("img");
-    image.src = imageName;
-    image.alt = "largeImage";
+    image.setAttribute("src", `${imageName}-full.jpeg`);
+    image.alt = imageName;
     viewer.hidden = false;
 }
 function hideViewer() {
