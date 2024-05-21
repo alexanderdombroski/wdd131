@@ -44,7 +44,7 @@ console.log(complexArray.flat().toString());
 
 /*
 
-me:
+Me:
 What can I do with reduce?
 
 ChatGPT:
