@@ -9,30 +9,95 @@
     /* Fonts */
     --body-font: Helvetica, Arial, sans-serif;
     --headline-font: "Lora", Impact, serif;
-}
 
+    /* Border */
+    --gold-border: var(--gold) solid 1px;
+}
 
 /* --------------- Header --------------- */
 
 body {
     margin: 0;
+    text-align: center;
+    color: var(--dark);
 }
 
+nav {
+    border-top: var(--gold-border);
+    border-bottom: var(--gold-border);
+}
 
+nav ul {
+    display: flex;
+    flex-direction: row;
+}
 
+nav li {
+    list-style: none;
+    margin: 0 20px;
+}
 
+nav li:first-child {
+    margin-left: auto;
+}
 
+nav a {
+    text-decoration: none;
+    color: var(--red);
+    font-size: 1.2rem;
+}
 
+nav a:hover, button:hover {
+    color: var(--dark);
+}
 
 /* --------------- Main --------------- */
 
 main {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
     justify-content: end;
 }
 
+main h1 {
+    font-size: 1.6rem;
+    color: var(--red);
+}
+main h2 {
+    font-size: 1.4rem;
+}
+main h3 {
+    font-size: 1.2rem;
+}
 
+main h1, main h2 {
+    margin: 10px auto;
+}
+
+main article {
+    min-height: 450px;
+    padding: 10px;
+    height: calc(70vw * 1);
+}
+
+#book-details {
+    text-align: right;
+    
+}
+
+#book-info img {
+    width: 70%;
+}
+
+#filters {
+    text-align: left;
+}
+
+button {
+    border: none;
+    color: var(--red);
+    background-color: transparent;
+}
 
 
 
