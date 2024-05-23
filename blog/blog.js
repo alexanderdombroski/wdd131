@@ -26,23 +26,22 @@ const articles = [
     }
 ];
 
-(function loadBooks(booksDicts) {
+(function loadBooks() {
     const detailsSection = document.getElementById("book-details")
-    const summarySection = document.getElementById("book-info")
-    booksDicts.forEach(bookInfo => {
+    articles.forEach(bookInfo => {
         detailsSection.innerHTML +=
-        `<article role="article">
-            <h2>${bookInfo["date"]}</h2>
-            <h3>${bookInfo["ages"]}</h3>
-            <h3>${bookInfo["genre"]}</h3>
-            <h3>${bookInfo["stars"]}</h3>
-        </article>`;
-        
-        summarySection.innerHTML += 
-        `<article role="article">
-            <h1>${bookInfo["title"]}</h1>
-            <img src="${bookInfo["imgSrc"]}" alt="${bookInfo["imgAlt"]}">
-            <p>${bookInfo["description"]}<button>Read More...</button></p>
+        `<article>
+            <div class="book-data">
+                <h2>${bookInfo["date"]}</h2>
+                <h3>${bookInfo["ages"]}</h3>
+                <h3>${bookInfo["genre"]}</h3>
+                <h3>${bookInfo["stars"]}</h3>
+            </div>
+            <div role="article" class="book-summary">
+                <h1>${bookInfo["title"]}</h1>
+                <img src="${bookInfo["imgSrc"]}" alt="${bookInfo["imgAlt"]}">
+                <p>${bookInfo["description"]}<button>Read More...</button></p>
+            </div>
         </article>`;
     });
-})(articles);
+})();
