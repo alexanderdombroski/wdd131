@@ -22,6 +22,7 @@ nav, #ponder_links {
     display: flex;
     justify-content: left;
     align-items: center;
+    overflow: scroll;
 }
 
 nav a, #ponder_links a {
