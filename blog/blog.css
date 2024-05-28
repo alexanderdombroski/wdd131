@@ -91,7 +91,7 @@ main article {
 .book-data {
     text-align: right;
     border-right: var(--gold-border);
-    width: 200px;
+    width: 180px;
 }
 
 .book-summary img {
