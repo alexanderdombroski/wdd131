@@ -64,10 +64,10 @@ main h1 {
     color: var(--red);
 }
 main h2 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 main h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 main h1, main h2 {
@@ -83,8 +83,15 @@ main article {
     grid-template-columns: 1fr 2fr;
 }
 
+.book-data, .book-summary, #filters {
+    margin: 20px auto;
+    padding: 10px;
+}
+
 .book-data {
     text-align: right;
+    border-right: var(--gold-border);
+    width: 200px;
 }
 
 .book-summary img {
@@ -94,6 +101,7 @@ main article {
 
 #filters {
     text-align: left;
+    border: var(--gold-border);
 }
 
 button {
@@ -113,8 +121,10 @@ button {
         display: block;
         margin: 20px auto;
     }
-    .book-data {
+    .book-data, .book-summary {
         text-align: center;
+        border: none;
+        margin: 0 auto;
     }
     .book-data > * {
         margin: 5px auto;
