@@ -8,7 +8,6 @@
     <title>Build a Blog</title>
     
     <link rel="stylesheet" href="blog.css">
-    <script src="article.js" defer></script>
     <script src="blog.js" defer></script>
 </head>
 <body>
@@ -30,7 +29,13 @@
             
         </section>
         <section id="filters">
-            <p>Filter form will go here</p>
+            <select name="stars" id="star-dropdown" onchange="filterBooksByStars()">
+                <option value="⭐">⭐</option>
+                <option value="⭐⭐">⭐⭐</option>
+                <option value="⭐⭐⭐">⭐⭐⭐</option>
+                <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
+                <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
+            </select>
         </section>
     </main>
     <footer>

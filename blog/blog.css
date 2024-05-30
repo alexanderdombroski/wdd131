@@ -100,8 +100,9 @@ main article {
 }
 
 #filters {
-    text-align: left;
+    text-align: center;
     border: var(--gold-border);
+
 }
 
 button {
@@ -114,9 +115,6 @@ button {
 
 
 @media (max-width: 700px)  {
-    #filters {
-        display: none;
-    }
     main, main article {
         display: block;
         margin: 20px auto;
@@ -129,4 +127,5 @@ button {
     .book-data > * {
         margin: 5px auto;
     }
+
 }
