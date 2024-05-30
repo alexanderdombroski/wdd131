@@ -29,12 +29,18 @@
             
         </section>
         <section id="filters">
-            <select name="stars" id="star-dropdown" onchange="filterBooksByStars()">
+            <select name="rating dropdown" id="star-dropdown" onchange="filterBooksByStars()">
+                <option value="none">none</option>
                 <option value="⭐">⭐</option>
                 <option value="⭐⭐">⭐⭐</option>
                 <option value="⭐⭐⭐">⭐⭐⭐</option>
                 <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
                 <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
+            </select>
+            <select name="age dropdown" id="age-dropdown" onchange="filterBooksByAge()">
+                <option value="none">none</option>
+                <option value="10-14">10-14</option>
+                <option value="12-16">12-16</option>
             </select>
         </section>
     </main>

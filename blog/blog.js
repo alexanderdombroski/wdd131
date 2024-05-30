@@ -1,4 +1,4 @@
-const articles = [
+const books = [
     {
         id: 1,
         title: "Septimus Heap Book One: Magyk",
@@ -34,21 +34,26 @@ const articles = [
     }
 ];
 
-function filterBooks(filterID) {
-    const stars = document.getElementById(filterID)
-    
-    let filteredBooks = articles.filter(article => article["stars"] === stars.value);
+function filterBooks(filterID, dataField) {
+    document.querySelectorAll(`select:not(#${filterID})`).forEach(select => select.value = "none");
 
-    loadBooks(filteredBooks)
+    const stars = document.getElementById(filterID);
+    if (stars.value !== "none") {
+        let filteredBooks = books.filter(article => article[dataField] === stars.value);
+        loadBooks(filteredBooks)
+    } else {
+        loadBooks(books)
+    }
+
 }
 
-const filterBooksByStars = () => filterBooks("star-dropdown");
+const filterBooksByStars = () => filterBooks("star-dropdown", "stars");
+const filterBooksByAge = () => filterBooks("age-dropdown", "ages");
 
-
-function loadBooks(articles) {
+function loadBooks(books) {
     const detailsSection = document.getElementById("book-details")
     detailsSection.innerHTML = ""
-    articles.forEach(bookInfo => {
+    books.forEach(bookInfo => {
         detailsSection.innerHTML +=
         `<article>
             <div class="book-data">
@@ -65,4 +70,5 @@ function loadBooks(articles) {
         </article>`;
     });
 }
-loadBooks(articles);
+
+loadBooks(books);
