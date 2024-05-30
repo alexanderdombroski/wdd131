@@ -8,7 +8,7 @@ const books = [
         imgAlt: "Book cover for Septimus Heap 1",
         ages: "10-14",
         genre: "Fantasy",
-        stars: "⭐⭐⭐⭐"
+        stars: "⭐⭐⭐"
     },
     {
         id: 2,
@@ -31,6 +31,17 @@ const books = [
         ages: "12-16",
         genre: "Fantasy",
         stars: "⭐⭐⭐⭐⭐"
+    },
+    {
+        id: 4,
+        title: "Warriors: Into the Wild",
+        date: "Jan 21 2003",
+        description: "Fierce cat tribes battle each other. What will the young housecat do with his new tribe?",
+        imgSrc: "https://m.media-amazon.com/images/I/51QcwzCyolL.jpg",
+        imgAlt: "Book cover for Warriors: Into the Wild",
+        ages: "10-14",
+        genre: "Fantasy",
+        stars: "⭐⭐⭐⭐⭐"
     }
 ];
 
@@ -44,7 +55,6 @@ function filterBooks(filterID, dataField) {
     } else {
         loadBooks(books)
     }
-
 }
 
 const filterBooksByStars = () => filterBooks("star-dropdown", "stars");
