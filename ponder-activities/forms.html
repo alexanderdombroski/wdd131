@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Demo</title>
+    <script src="scripts/forms.js" defer></script>
+    <link rel="stylesheet" href="styles/forms.css">
+</head>
+<body>
+    <header><h1>Checkout</h1></header>
+    <main>
+        <section class="errors"></section>
+        <form id="checkout-form" action="completed.html">
+            <div>
+                <label for="full-name">Full Name: </label>
+                <input type="text" id="full-name" name="full-name" required autocomplete="off">
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required autocomplete="off">
+            </div>
+            <div>
+                <label for="address">Address:</label>
+                <input type="address" id="address" name="address" autocomplete="off">
+            </div>
+            <div>
+                <label for="payment-method">Payment Method:</label>
+                <select type="text" id="payment-method" name="payment-method">
+                    <option value="debit">debit</option>
+                    <option value="credit">credit</option>
+                    <option value="paypal">paypal</option>
+                </select>
+            </div>
+            <div>
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" name="card-number" placeholder="7500-1122-3123-4567" pattern="\d{4}-\d{4}-\d{4}-\d{4}" required autocomplete="off">
+            </div>
+            <div class="hide">
+                <label for="paypal">PayPal Username:</label>
+                <input type="text" id="paypal" name="paypal" autocomplete="off">
+            </div>
+            <div>
+                <label for="birthday">Friends Birthday:</label>
+                <input type="date" id="birthday" name="birthday" autocomplete="off">
+            </div>
+            <div>
+                <label for="fav-color">Favorite Color:</label>
+                <input type="color" id="fav-color" name="fav-color" autocomplete="off">
+            </div>
+            <div>
+                <label for="month">Favorite Month:</label>
+                <input name="month" id="month" type="month" autocomplete="off"></input>
+            </div>
+            <div>
+                <label for="essay">Paragraph Essay:</label>
+                <textarea name="essay" id="essay"></textarea>
+            </div>
+            <div>
+                <label for="waffles">Do you like Waffles:</label>
+                <input name="waffles" id="waffles" type="checkbox" checked></input>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </main>
+</body>
+</html>
