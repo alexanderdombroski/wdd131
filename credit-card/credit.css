@@ -22,7 +22,7 @@ fieldset {
     display: inline;
 }
 
-fieldset label {
+fieldset label, span {
     display: block;
     letter-spacing: 1px;
 }
