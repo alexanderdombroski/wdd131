@@ -5,6 +5,7 @@
 .eslintrc.js
 .eslintrc.json
 .eslintrc.yml
+eslint.config.mjs
 
 # Node Modules
 node_modules/
