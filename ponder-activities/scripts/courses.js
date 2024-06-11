@@ -1,5 +1,5 @@
 // courses.js
-const aCourse = {
+export const aCourse = {
     code: "CSE121b",
     name: "Javascript Language",
     sections: [
@@ -12,16 +12,17 @@ const aCourse = {
             this.sections[i].enrolled += amount;
             updateCourses();
         }
+    },
+    init: function () {
+        updateCourses();
+        updateTitles();
     }
 };
 
-// aCourse.enrollStudent.bind(aCourse.enrollStudent)
-// aCourse.dropStudent.bind(aCourse.dropStudent)
-
-(function updateTitles() {
+function updateTitles() {
     document.getElementById("courseName").innerText = aCourse.name
     document.getElementById("courseCode").innerText = aCourse.code
-})();
+}
 
 function updateCourses() {
     const table =  document.getElementById("sections");
@@ -37,10 +38,3 @@ function updateCourses() {
         </tr>`
     });
 }
-updateCourses();
-
-(function initListeners() {
-    const sectionInput = document.getElementById("sectionNumber");
-    document.getElementById("enrollStudent").addEventListener('click', (event) => aCourse.changeStudent(sectionInput.value, 1))
-    document.getElementById("dropStudent").addEventListener('click', (event) => aCourse.changeStudent(sectionInput.value, -1))
-})();
