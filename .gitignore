@@ -6,4 +6,11 @@
 .eslintrc.json
 .eslintrc.yml
 
+# Node Modules
 node_modules/
+
+# VSCode
+.vscode/
+
+# Apple
+.DS_Store
