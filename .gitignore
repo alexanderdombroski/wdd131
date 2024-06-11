@@ -1,0 +1,7 @@
+# Ignore ESLint cache
+.eslintcache
+
+# Ignore ESLint configuration files
+.eslintrc.js
+.eslintrc.json
+.eslintrc.yml
