@@ -82,5 +82,3 @@ function loadBooks(books) {
 }
 
 loadBooks(books);
-
-console.log("hello")
