@@ -1,0 +1,40 @@
+
+/* --------------- General --------------- */
+
+body {
+    text-align: center;
+}
+
+body * {
+    width: 100%;
+}
+
+
+/* --------------- Header --------------- */
+
+.search-bar {
+    width: 80%;
+}
+
+/* --------------- Main --------------- */
+
+main {
+    padding: 20px;
+}
+
+/* --------------- Footer --------------- */
+
+footer {
+    display: flex;
+}
+
+.social {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.social img {
+    margin: 10px;
+    
+}
