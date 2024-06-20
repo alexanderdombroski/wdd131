@@ -3,6 +3,7 @@
 
 body {
     text-align: center;
+    margin: 0;
 }
 
 body * {
@@ -12,14 +13,46 @@ body * {
 
 /* --------------- Header --------------- */
 
+.title {
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+    align-items: baseline;
+}
+
+.title img {
+    width: 70px;
+}
+
+.title h1 {
+    width: auto;
+}
+
 .search-bar {
     width: 80%;
+    display: flex;
+    height: 40px;
 }
+
+#search-input {
+    
+}
+
+.search-bar img {
+    width: 30px;
+    padding: 5px;
+    border: black 1px solid;
+}
+
 
 /* --------------- Main --------------- */
 
 main {
+    width: auto;
     padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    border: solid black 1px;
 }
 
 /* --------------- Footer --------------- */
@@ -36,5 +69,4 @@ footer {
 
 .social img {
     margin: 10px;
-    
 }

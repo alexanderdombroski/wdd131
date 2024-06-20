@@ -11,25 +11,33 @@
 </head>
 <body>
     <header>
-        <h1>Recipe Book</h1>
+        <div class="title">
+            <img src="images/recipe-book.png" alt="">
+            <h1>Recipe Book</h1>
+        </div>
         <div class="search-bar">
-            <label for="search-input"></label>
-            <input type="text" id="search-input" name="search-input">
-            <img src="" alt="">
+            
+            <label for="search-input" hidden>Recipe Search Bar</label>
+            <input type="text" id="search-input" name="search-input" placeholder="Find a recipe" list="recipe-list">
+            <img src="images/search.svg" alt="search icon">
+            <datalist id="recipe-list">
+                
+            </datalist>
         </div>
     </header>
+    <hr></hr>
     <main>
-        
+
+
     </main>
     <footer>
-        <p>&copy;2023</p>
+        <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">Recipe icons created by Freepik - Flaticon</a>
         <div class="social">
             <!-- Social media icons provided under CC from https://www.iconfinder.com/AlfredoCreates  -->
             <a href="#"><img src="images/instagram_icon.svg" alt="instagram icon"></a>
             <a href="#"><img src="images/youtube_icon.svg" alt="youtube icon"></a>
             <a href="#"><img src="images/pinterest_icon.svg" alt="pinterest icon"></a>
         </div>
-        <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">Recipe icons created by Freepik - Flaticon</a>
     </footer>
 </body>
 </html>
