@@ -48,11 +48,10 @@ function loadRecipe(recipeObject) {
 
     // Populate current recipe
     const rating = (req) => (recipeObject.rating >= req) ? '⭐' : '☆';
-    console.log(recipeObject.rating)
     space.innerHTML += `
-    
-
-    
+    <img src="${recipeObject.image}" alt="${recipeObject.name}">
+    ${recipeObject.tags.map(tag => `<p class="tag">${tag}</p>`).join("")}
+    <h1>${recipeObject.name}</h1>
     <span
 	    class="rating"
 	    role="img"
@@ -64,6 +63,6 @@ function loadRecipe(recipeObject) {
 	    <span aria-hidden="true" class="icon-star-empty">${rating(4)}</span>
 	    <span aria-hidden="true" class="icon-star-empty">${rating(5)}</span>
     </span>
-    `
+    <p>${recipeObject.description}</p>`
 }
 
