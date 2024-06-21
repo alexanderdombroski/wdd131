@@ -9,6 +9,7 @@
     --text-light: #ebebeb;
     --primary-font: Arial, Helvetica, sans-serif;
     --secondary-font: "Amatic SC";
+    
 }
 
 body {
@@ -29,6 +30,11 @@ h1, h2, h3, h4 {
     font-family: var(--secondary-font);
 }
 
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
 /* --------------- Header --------------- */
 
 .title {
@@ -41,12 +47,12 @@ h1, h2, h3, h4 {
 }
 
 .title img {
-    width: 60px;
+    width: 100px;
 }
 
 .title h1 {
     font-family: var(--secondary-font);
-    font-size: 2.4em;
+    font-size: 4em;
 }
 
 .search-bar {
@@ -100,21 +106,24 @@ main {
 main h2 {
     color: var(--primary-color);
     font-size: 2.2em;
-    margin: 0;
+    margin-bottom: 0;
 }
 
 /* --------------- Footer --------------- */
 
 footer {
+    margin-top: 40px;
     display: flex;
+    flex-direction: column;
 }
 
 .social {
     display: flex;
-    justify-content: space-around;
-    width: 30%;
+    justify-items: space-between;
+    margin: 0 auto;
+    width: 300px;
 }
 
 .social img {
-    margin: 10px;
+    width: 80px;
 }
