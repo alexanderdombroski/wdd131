@@ -1,41 +1,63 @@
 
 /* --------------- General --------------- */
 
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+:root {
+    --primary-color: #1B98E0;
+    --secondary-color: #59c3c3;
+    --text-dark: #333;
+    --text-light: #ebebeb;
+    --primary-font: Arial, Helvetica, sans-serif;
+    --secondary-font: "Amatic SC";
+}
+
 body {
     text-align: center;
     margin: 0;
+    font-family: var(--primary-font);
 }
 
 body * {
     width: 100%;
 }
 
+img {
+	max-width: 100%;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--secondary-font);
+}
 
 /* --------------- Header --------------- */
 
 .title {
-    display: flex;
-    justify-content: center;
-    margin: 30px auto;
-    align-items: baseline;
+    margin: 40px auto;
+}
+
+.title * {
+    display: inline;
+    vertical-align: bottom;
 }
 
 .title img {
-    width: 70px;
+    width: 60px;
 }
 
 .title h1 {
-    width: auto;
+    font-family: var(--secondary-font);
+    font-size: 2.4em;
 }
 
 .search-bar {
+    margin: 20px auto;
     width: 80%;
     display: flex;
     height: 40px;
 }
 
 #search-input {
-    
+    font-size: 1.4em;
 }
 
 .search-bar img {
@@ -53,6 +75,32 @@ main {
     margin: 20px;
     border-radius: 5px;
     border: solid black 1px;
+}
+
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.tags p {
+    font-size: 1.4em;
+    border: black solid 1px;
+    padding: 10px; 
+    margin: 5px;
+    width: auto;
+    display: inline-block;
+}
+
+main {
+    text-align: left;
+}
+
+main h2 {
+    color: var(--primary-color);
+    font-size: 2.2em;
+    margin: 0;
 }
 
 /* --------------- Footer --------------- */
