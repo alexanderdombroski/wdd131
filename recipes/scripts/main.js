@@ -17,6 +17,7 @@ import recipes from "./recipes.mjs";
 })();
 
 function queryRecipe(event) {
+    // Display the recipes
     const value = event.target.value.toLowerCase()
     let recipeObjects = recipes.filter(recipe => {
         return recipe.name.contains(value) ||
@@ -25,18 +26,22 @@ function queryRecipe(event) {
     });
     recipeObjects.sort((r1, r2) => r1.name.localeCompare(r2.name));
     loadRecipe(recipeObjects);
+
+    // Defocus the searchbar
+    event.target.blur();
 }
 
 let searchDelay;
 
 function populateDatalist(event) {
+    // Adds items to the 
     clearTimeout(searchDelay);
     searchDelay = setTimeout(function() {
         const datalist = event.target.list;
         const value = event.target.value.toLowerCase();
         datalist.innerHTML = recipes
             .filter(recipe => recipe.name.contains(value))
-            .slice(0, 5)
+            // .slice(0, 5) 
             .map(recipe => `<option value="${recipe.name}">`)
             .join("");
     }, 300);
