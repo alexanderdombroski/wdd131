@@ -89,9 +89,11 @@ main {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
-.tags p {
+.tags li {
     font-size: 1.4em;
     border: black solid 1px;
     padding: 10px; 
@@ -103,7 +105,7 @@ main {
 main h2 {
     color: var(--primary-color);
     font-size: 2.2em;
-    margin-bottom: 0;
+    margin: 0;
 }
 
 /* --------------- Footer --------------- */
@@ -137,10 +139,10 @@ footer a {
         display: flex;
     }
     main img {
-        display: inline;
         width: 50%;
         min-width: 300px;
         object-fit: contain;
+        align-self: flex-start;
     }
     .recipe-details {
         margin: 0 10px;
