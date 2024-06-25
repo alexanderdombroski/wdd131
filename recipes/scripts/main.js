@@ -17,7 +17,7 @@ import recipes from "./recipes.mjs";
 })();
 
 function queryRecipe(event) {
-    const value = event.target.value
+    const value = event.target.value.toLowerCase()
     let recipeObjects = recipes.filter(recipe => {
         return recipe.name.contains(value) ||
         recipe.description.contains(value) ||
@@ -27,14 +27,16 @@ function queryRecipe(event) {
     loadRecipe(recipeObjects);
 }
 
+let searchDelay;
 
-let searchDelay
 function populateDatalist(event) {
     clearTimeout(searchDelay);
     searchDelay = setTimeout(function() {
         const datalist = event.target.list;
+        const value = event.target.value.toLowerCase();
         datalist.innerHTML = recipes
-            .filter(recipe => recipe.name.contains(event.target.value))
+            .filter(recipe => recipe.name.contains(value))
+            .slice(0, 5)
             .map(recipe => `<option value="${recipe.name}">`)
             .join("");
     }, 300);
@@ -82,5 +84,5 @@ function recipeTemplate(recipeObject) {
 // -------------------- Extensions --------------------
 
 String.prototype.contains = function(word) {
-    return this.toLowerCase().includes(word.toLowerCase());
+    return this.toLowerCase().includes(word);
 };
