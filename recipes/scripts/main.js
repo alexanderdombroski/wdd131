@@ -1,15 +1,10 @@
-import recipes from "./recipes.mjs"
+import recipes from "./recipes.mjs";
 
 // -------------------- Page Loading IIFEs --------------------
 
-(function populateDatalist() {
-    const datalist = document.getElementById("recipe-list");
-    recipes.forEach(recipe => datalist.innerHTML += `<option value="${recipe.name}">`);
-})();
-
 (function randomRecipe() {
-    const index = Math.floor(Math.random() * recipes.length)
-    loadRecipe([recipes[index]])
+    const index = Math.floor(Math.random() * recipes.length);
+    loadRecipe([recipes[index]]);
 })();
 
 // -------------------- Events --------------------
@@ -18,14 +13,34 @@ import recipes from "./recipes.mjs"
     const searchBar = document.getElementById("search-input");
     searchBar.addEventListener('change', queryRecipe);
     searchBar.addEventListener('click', (event) => event.target.value = "");
+    searchBar.addEventListener('input', populateDatalist);
 })();
 
 function queryRecipe(event) {
-    const recipeObject = recipes.filter(recipe => recipe.name == event.target.value)[0];
-    loadRecipe(recipeObject);
+    const value = event.target.value
+    let recipeObjects = recipes.filter(recipe => {
+        return recipe.name.contains(value) ||
+        recipe.description.contains(value) ||
+        recipe.tags.some(tag => tag.contains(value))
+    });
+    recipeObjects.sort((r1, r2) => r1.name.localeCompare(r2.name));
+    loadRecipe(recipeObjects);
 }
 
-// -------------------- DOM Manipulation --------------------
+
+let searchDelay
+function populateDatalist(event) {
+    clearTimeout(searchDelay);
+    searchDelay = setTimeout(function() {
+        const datalist = event.target.list;
+        datalist.innerHTML = recipes
+            .filter(recipe => recipe.name.contains(event.target.value))
+            .map(recipe => `<option value="${recipe.name}">`)
+            .join("");
+    }, 300);
+}
+
+// -------------------- Load Recipes --------------------
 
 function loadRecipe(recipeObjects) {
     // Clear current recipe(s)
@@ -45,19 +60,27 @@ function loadRecipe(recipeObjects) {
 function recipeTemplate(recipeObject) {
     const rating = (req) => (recipeObject.rating >= req) ? '⭐' : '☆';
     return `
-    <img src="${recipeObject.image}" alt="${recipeObject.name}">
-    <div class="recipe-details">
-        <ul class="tags">
-            ${recipeObject.tags.map(tag => `<li>${tag}</li>`).join("")}
-        </ul>
-        <h2>${recipeObject.name}</h2>
-        <span class="rating" role="img" aria-label="Rating: 4 out of 5 stars">   
-	        <span aria-hidden="true" class="icon-star">${rating(1)}</span>
-	        <span aria-hidden="true" class="icon-star">${rating(2)}</span>
-	        <span aria-hidden="true" class="icon-star">${rating(3)}</span>
-	        <span aria-hidden="true" class="icon-star-empty">${rating(4)}</span>
-	        <span aria-hidden="true" class="icon-star-empty">${rating(5)}</span>
-        </span>
-        <p>${recipeObject.description}</p>
-    <div>`
+    <article class="recipe">
+        <img src="${recipeObject.image}" alt="${recipeObject.name}">
+        <div class="recipe-details">
+            <ul class="tags">
+                ${recipeObject.tags.map(tag => `<li>${tag}</li>`).join("")}
+            </ul>
+            <h2>${recipeObject.name}</h2>
+            <span class="rating" role="img" aria-label="Rating: 4 out of 5 stars">   
+	            <span aria-hidden="true" class="icon-star">${rating(1)}</span>
+	            <span aria-hidden="true" class="icon-star">${rating(2)}</span>
+	            <span aria-hidden="true" class="icon-star">${rating(3)}</span>
+	            <span aria-hidden="true" class="icon-star-empty">${rating(4)}</span>
+	            <span aria-hidden="true" class="icon-star-empty">${rating(5)}</span>
+            </span>
+            <p>${recipeObject.description}</p>
+        <div>
+    </article>`
 }
+
+// -------------------- Extensions --------------------
+
+String.prototype.contains = function(word) {
+    return this.toLowerCase().includes(word.toLowerCase());
+};

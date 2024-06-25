@@ -75,7 +75,7 @@ a {
 
 /* --------------- Main --------------- */
 
-main {
+.recipe {
     width: auto;
     padding: 20px;
     margin: 20px;
@@ -102,7 +102,7 @@ main {
     display: inline-block;
 }
 
-main h2 {
+.recipe h2 {
     color: var(--primary-color);
     font-size: 2.2em;
     margin: 0;
@@ -135,10 +135,10 @@ footer a {
 /* --------------- Desktop --------------- */
 
 @media screen and (min-width: 650px) {
-    main {
+    .recipe {
         display: flex;
     }
-    main img {
+    .recipe img {
         width: 50%;
         min-width: 300px;
         object-fit: contain;
