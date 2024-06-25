@@ -1,9 +1,18 @@
 import recipes from "./recipes.mjs"
 
+// -------------------- Page Loading IIFEs --------------------
+
 (function populateDatalist() {
     const datalist = document.getElementById("recipe-list");
     recipes.forEach(recipe => datalist.innerHTML += `<option value="${recipe.name}">`);
 })();
+
+(function randomRecipe() {
+    const index = Math.floor(Math.random() * recipes.length)
+    loadRecipe([recipes[index]])
+})();
+
+// -------------------- Events --------------------
 
 (function initListeners() {
     const searchBar = document.getElementById("search-input");
@@ -16,44 +25,31 @@ function queryRecipe(event) {
     loadRecipe(recipeObject);
 }
 
+// -------------------- DOM Manipulation --------------------
 
-/* 
-Recipes
-1. Author
-2. URL
-3. isBasedOn
-4. cookTime
-5. datePublished
-6. tags (list)
-7. description
-8. image
-9. recipeIngredient (lsit)
-10. name
-11. prepTime
-12. recipeInstructions
-13. recipeYield
-14. rating
-*/
-
-function loadRecipe(recipeObject) {
-    // Clear current recipe
+function loadRecipe(recipeObjects) {
+    // Clear current recipe(s)
     const space = document.querySelector("main");
     space.innerHTML = "";
     
     // Handle incorrect input
-    if (recipeObject == undefined) {
+    if (recipeObjects.length == 0) {
         space.innerHTML = "<span>no recipe match</span>"
         return;
     }
 
     // Populate current recipe
+    recipeObjects.forEach(recipe => space.innerHTML += recipeTemplate(recipe));
+}
+
+function recipeTemplate(recipeObject) {
     const rating = (req) => (recipeObject.rating >= req) ? '⭐' : '☆';
-    space.innerHTML += `
+    return `
     <img src="${recipeObject.image}" alt="${recipeObject.name}">
     <div class="recipe-details">
-        <div class="tags">
-            ${recipeObject.tags.map(tag => `<p>${tag}</p>`).join("")}
-        </div>
+        <ul class="tags">
+            ${recipeObject.tags.map(tag => `<li>${tag}</li>`).join("")}
+        </ul>
         <h2>${recipeObject.name}</h2>
         <span class="rating" role="img" aria-label="Rating: 4 out of 5 stars">   
 	        <span aria-hidden="true" class="icon-star">${rating(1)}</span>
@@ -65,4 +61,3 @@ function loadRecipe(recipeObject) {
         <p>${recipeObject.description}</p>
     <div>`
 }
-
