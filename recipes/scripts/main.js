@@ -41,7 +41,6 @@ function populateDatalist(event) {
         const value = event.target.value.toLowerCase();
         datalist.innerHTML = recipes
             .filter(recipe => recipe.name.contains(value))
-            // .slice(0, 5) 
             .map(recipe => `<option value="${recipe.name}">`)
             .join("");
     }, 300);
